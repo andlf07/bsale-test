@@ -1,3 +1,4 @@
+//We use this file config.ts to get all the variables of enviroment
 import * as dotenv from 'dotenv';
 
 dotenv.config();

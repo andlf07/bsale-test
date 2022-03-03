@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "joi": "^17.6.0",
+    "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
   },
   "devDependencies": {
