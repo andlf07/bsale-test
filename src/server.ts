@@ -1,5 +1,5 @@
 import { Server } from '@hapi/hapi';
-import { DBManager } from './db/DBManager';
+import { dbManager, DBManager } from './db/DBManager';
 const Hapi = require('@hapi/hapi');
 
 const PRODUCTS_ROUTES = require('./routes/products.routes');
@@ -14,7 +14,7 @@ export class App {
   constructor(port: string) {
     this.port = port || '4000';
     this.host = '0.0.0.0';
-    this.DB = new DBManager();
+    this.DB = dbManager;
   }
 
   //This method we initialize the Hapi Server using attributes from the constructor
@@ -27,10 +27,9 @@ export class App {
           cors: true,
         },
       });
-      // const server = Hapi.server();
-      // const server: Server = Hapi.server();
 
       await this.DB.connectDB();
+      // await this.DB.closeDB();
       server.route(PRODUCTS_ROUTES);
       server.route(CATEGORY_ROUTES);
       return server;

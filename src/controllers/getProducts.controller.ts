@@ -54,6 +54,27 @@ export class ProductsController {
       };
     }
   }
+  //get products with name
+  async getProductsByAttributes(
+    req: Request,
+    res: ResponseToolkit,
+  ): Promise<Array<object>> {
+    const query = req.query;
+    const { name = '', price = '', discount = '' } = query;
+    let data = {
+      name,
+      price,
+      discount,
+    };
+    try {
+      const getByAttributes = await productsService.getProductsByAttributes(
+        data,
+      );
+      return getByAttributes;
+    } catch (error) {
+      return error;
+    }
+  }
 }
 
 export const productosController = new ProductsController();

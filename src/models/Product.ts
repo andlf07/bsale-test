@@ -3,12 +3,12 @@ import { ModelInitializer } from './ModelInitializer';
 
 //This interface is indicating us wich are the field the Products object will have.
 export interface ProductsAttributes {
-  id: number;
-  name: string;
-  url_image: string;
-  price: string;
-  discount: number;
-  category: number;
+  id?: number;
+  name?: string;
+  url_image?: string;
+  price?: string;
+  discount?: number;
+  category?: number;
 }
 
 export interface ProductsCreationAttributes

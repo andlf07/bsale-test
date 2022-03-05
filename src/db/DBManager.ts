@@ -9,6 +9,14 @@ export class DBManager {
     }
   }
 
+  async reOpenDB(): Promise<void> {
+    try {
+      await dbClient.openDB();
+    } catch (error) {
+      throw new Error('Something wrong reOpening DB');
+    }
+  }
+
   async closeDB(): Promise<void> {
     try {
       await dbClient.finish();
@@ -17,3 +25,5 @@ export class DBManager {
     }
   }
 }
+
+export const dbManager = new DBManager();

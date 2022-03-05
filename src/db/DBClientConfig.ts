@@ -6,9 +6,8 @@ export class DBClientConfig {
   static createConfig(): DBConfig {
     return {
       pool: {
-        max: 5,
-        min: 0,
-        idle: 300,
+        max: 10,
+        idle: 100,
       },
       dialectOptions: {
         ssl: {

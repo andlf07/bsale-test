@@ -1,3 +1,4 @@
+import { dbManager, DBManager } from '../db/DBManager';
 import { Category } from '../models/Category';
 
 //this will be the service for produtcs controller

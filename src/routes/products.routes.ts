@@ -11,8 +11,15 @@ module.exports = [
     handler: productosController.getAll,
   },
   {
+    //get products by category
     method: 'GET',
     path: `${API_VERSION}/{category}`,
     handler: productosController.getProductsByCategory,
+  },
+  {
+    //get products by attributes
+    method: 'GET',
+    path: `${API_VERSION}/attributes`,
+    handler: productosController.getProductsByAttributes,
   },
 ];

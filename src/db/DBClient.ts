@@ -10,7 +10,6 @@ export class DBClient implements ClientFactory<Sequelize> {
   constructor(config: DBConfig) {
     this.client = new Sequelize(config);
   }
-
   async init(): Promise<Sequelize> {
     try {
       await this.client
