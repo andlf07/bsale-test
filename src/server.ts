@@ -11,8 +11,8 @@ export class App {
   private port: string;
   private DB: DBManager;
 
-  constructor(port: string) {
-    this.port = port || '4000';
+  constructor(port: string | undefined) {
+    this.port = port || '3001';
     this.host = '0.0.0.0';
     this.DB = dbManager;
   }
