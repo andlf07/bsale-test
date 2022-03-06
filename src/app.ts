@@ -5,7 +5,6 @@ const { SERVER_PORT } = config;
 
 //Initialize the App
 const server: App = new App(SERVER_PORT);
-// const server: App = new App(`${SERVER_PORT}`);
 server.start();
 
 process.on('unhandledRejection', (err) => {
