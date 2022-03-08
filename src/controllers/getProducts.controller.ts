@@ -58,7 +58,7 @@ export class ProductsController {
   async getProductsByAttributes(
     req: Request,
     res: ResponseToolkit,
-  ): Promise<Array<object>> {
+  ): Promise<ReturnedProductObject> {
     const query = req.query;
     const { name = '', price = '', discount = '' } = query;
     let data = {
@@ -70,9 +70,16 @@ export class ProductsController {
       const getByAttributes = await productsService.getProductsByAttributes(
         data,
       );
-      return getByAttributes;
+      return {
+        code: 200,
+        message: 'OK',
+        products: getByAttributes,
+      };
     } catch (error) {
-      return error;
+      return {
+        code: 400,
+        message: 'BAD_REQUEST',
+      };
     }
   }
 }
